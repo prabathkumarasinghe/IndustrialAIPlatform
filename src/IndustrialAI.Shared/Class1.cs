@@ -1,0 +1,6 @@
+﻿namespace IndustrialAI.Shared;
+
+public class Class1
+{
+
+}

@@ -1,0 +1,35 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="16.2.0" />
+    <PackageReference Include="FluentValidation" Version="12.1.1" />
+    <PackageReference Include="MediatR" Version="14.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IndustrialAI.Contracts\IndustrialAI.Contracts.csproj" />
+    <ProjectReference Include="..\IndustrialAI.Domain\IndustrialAI.Domain.csproj" />
+    <ProjectReference Include="..\IndustrialAI.Shared\IndustrialAI.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Commands\Machine\UpdateMachine\" />
+    <Folder Include="Commands\Prediction\PredictFailure\" />
+    <Folder Include="Commands\Report\GenerateAIReport\" />
+    <Folder Include="Commands\Sensor\AddSensor\" />
+    <Folder Include="Commands\Sensor\UploadSensorData\" />
+    <Folder Include="Common\" />
+    <Folder Include="Queries\Dashboard\GetDashboard\" />
+    <Folder Include="Queries\Machine\GetMachineById\" />
+    <Folder Include="Queries\Machine\GetAllMachines\" />
+    <Folder Include="Queries\Prediction\GetPredictions\" />
+    <Folder Include="Queries\Sensor\GetSensorReadings\" />
+  </ItemGroup>
+
+</Project>

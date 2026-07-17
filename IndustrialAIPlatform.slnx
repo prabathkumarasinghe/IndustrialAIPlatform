@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/IndustrialAI.API/IndustrialAI.API.csproj" />
+    <Project Path="src/IndustrialAI.Application/IndustrialAI.Application.csproj" />
+    <Project Path="src/IndustrialAI.Contracts/IndustrialAI.Contracts.csproj" />
+    <Project Path="src/IndustrialAI.Domain/IndustrialAI.Domain.csproj" />
+    <Project Path="src/IndustrialAI.Infrastructure/IndustrialAI.Infrastructure.csproj" />
+    <Project Path="src/IndustrialAI.Shared/IndustrialAI.Shared.csproj" />
+    <Project Path="src/IndustrialAI.Worker/IndustrialAI.Worker.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/IndustrialAI.API.Tests/IndustrialAI.API.Tests.csproj" />
+    <Project Path="tests/IndustrialAI.Application.Tests/IndustrialAI.Application.Tests.csproj" />
+    <Project Path="tests/IndustrialAI.Domain.Tests/IndustrialAI.Domain.Tests.csproj" />
+    <Project Path="tests/IndustrialAI.Infrastructure.Tests/IndustrialAI.Infrastructure.Tests.csproj" />
+  </Folder>
+</Solution>

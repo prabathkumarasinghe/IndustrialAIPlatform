@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-IndustrialAI.Worker-b45ec07e-bbab-42e7-941a-9b5cbaf978da</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.20.2" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.9" />
+    <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\tests\IndustrialAI.Application.Tests\IndustrialAI.Application.Tests.csproj" />
+    <ProjectReference Include="..\IndustrialAI.Contracts\IndustrialAI.Contracts.csproj" />
+    <ProjectReference Include="..\IndustrialAI.Infrastructure\IndustrialAI.Infrastructure.csproj" />
+    <ProjectReference Include="..\IndustrialAI.Shared\IndustrialAI.Shared.csproj" />
+  </ItemGroup>
+</Project>
