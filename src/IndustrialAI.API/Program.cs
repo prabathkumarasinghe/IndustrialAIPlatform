@@ -1,3 +1,4 @@
+using IndustrialAI.API.Extensions;
 using IndustrialAI.Application;
 using IndustrialAI.Infrastructure;
 using IndustrialAI.Infrastructure.Persistence;
@@ -5,17 +6,19 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+builder.Services.AddApiServices();
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerDocumentation();
 
 builder.Services.AddApplication();
+
 builder.Services.AddInfrastructure(builder.Configuration);
 
 builder.Services.AddDbContext<IndustrialDbContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("DefaultConnection")));
+
+builder.Services.AddJwtAuthentication(builder.Configuration);
 
 var app = builder.Build();
 
@@ -25,9 +28,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
+app.UseApplicationMiddleware();
 
 app.MapControllers();
 

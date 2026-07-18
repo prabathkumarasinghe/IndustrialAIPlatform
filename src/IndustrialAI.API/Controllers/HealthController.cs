@@ -4,7 +4,7 @@ namespace IndustrialAI.API.Controllers;
 
 [ApiController]
 [Route("api/[controller]")]
-public class HealthController : ControllerBase
+public class HealthController : BaseApiController
 {
     [HttpGet]
     public IActionResult Get()
