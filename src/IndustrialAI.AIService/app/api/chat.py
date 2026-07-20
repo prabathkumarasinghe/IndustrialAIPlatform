@@ -1,11 +1,21 @@
 from fastapi import APIRouter
 
-router = APIRouter(prefix="/chat", tags=["AI Chat"])
+from app.chat.chat_service import ChatService
+from app.schemas.chat_request import ChatRequest
+from app.schemas.chat_response import ChatResponse
+
+router = APIRouter(
+    prefix="/chat",
+    tags=["AI Chat"]
+)
+
+service = ChatService()
 
 
-@router.post("/")
-async def chat(message: dict):
-    return {
-        "success": True,
-        "response": "AI service is ready."
-    }
+@router.post(
+    "",
+    response_model=ChatResponse
+)
+async def chat(request: ChatRequest):
+
+    return service.ask(request.question)

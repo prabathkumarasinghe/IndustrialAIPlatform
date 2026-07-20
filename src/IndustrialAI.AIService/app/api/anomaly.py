@@ -1,12 +1,21 @@
 from fastapi import APIRouter
 
-router = APIRouter(prefix="/anomaly", tags=["Anomaly Detection"])
+from app.anomaly_detection.detector import AnomalyDetector
+from app.schemas.anomaly_request import AnomalyRequest
+from app.schemas.anomaly_response import AnomalyResponse
+
+router = APIRouter(
+    prefix="/anomaly",
+    tags=["Anomaly Detection"]
+)
+
+detector = AnomalyDetector()
 
 
-@router.post("/")
-async def detect(data: dict):
-    return {
-        "success": True,
-        "anomaly": False,
-        "score": 0.12
-    }
+@router.post(
+    "",
+    response_model=AnomalyResponse
+)
+async def detect_anomaly(request: AnomalyRequest):
+
+    return detector.detect(request)
